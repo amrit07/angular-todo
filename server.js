@@ -2,16 +2,13 @@ var express = require('express');
 var app = express();
 var path = require('path');
 
-app.use(express.static(path.join(__dirname, 'app')));
-
-//app.use(express.static(path.join(__dirname, 'node_modules/angular')));
-//app.use(express.static(path.join(__dirname, 'components')));
-//app.use(express.static('app/components'));
+app.use('/dist',express.static(path.resolve(__dirname,'app/dist')));
+app.use('/css',express.static(path.resolve(__dirname,'app/css')));
+app.use('/app',express.static(path.resolve(__dirname,'app')));
 
 // viewed at http://localhost:8080
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/app/index.html'));
 });
-console.log('listnerin to port 8080');
-console.log('dir name is ',__dirname);
+console.log('listening to port 8080');
 app.listen(8080);
