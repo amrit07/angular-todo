@@ -1,0 +1,22 @@
+<style>
+    .completed span{
+        text-decoration: line-through;
+    }
+</style>
+<div>
+    <input type="text" class="form-control add-todo" placeholder="Add todo" ng-model="ctrl.item">
+    <button id="checkAll" class="btn btn-success" ng-click="ctrl.addTodo()">Mark all as done</button>
+</div>  
+ 
+ <ul id="sortable" class="list-group">
+    <li ng-repeat="item in ctrl.list" class="list-group-item" ng-class="{completed:item.isCompleted}">
+        <list-item item-obj="item" on-update="ctrl.calculate()"></list-item>
+    </li>
+
+</ul>
+<hr>
+<div>
+    <div class="cols-xs-4">completed : {{ctrl.completed}}</div>
+    <div class="cols-xs-4">Remaining : {{ctrl.remaining}}</div>
+    <div class="cols-xs-4">total : {{ctrl.total}}</div>
+</div>
