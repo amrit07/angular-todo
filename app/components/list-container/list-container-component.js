@@ -5,9 +5,20 @@
             templateUrl : '/app/components/list-container/list-container.html',
             scope:{},
             bindToController:true,
-            controller:function(){
+            controller:function($http){
                 var ctrl = this;
                 this.list = [];
+                this.getTodo = function(){
+                    $http.get('/api/v1/todos').then(
+                        function(response){
+                            console.log('response is',response.data);
+                            ctrl.list = response.data;
+                        },
+                        function (err) {
+                            console.log('error occured while fetching the items')
+                        }
+                    )
+                };
                 this.addTodo = function(){
                     if(!ctrl.item){
                         return false;
@@ -15,9 +26,17 @@
                     var itemObj = {};
                     itemObj.title = ctrl.item;
                     itemObj.isCompleted = false;
-                    ctrl.list.push(itemObj);
-                    ctrl.item = '';
-                    ctrl.calculate();
+
+                    $http.post('/api/v1/todos',itemObj).then(
+                        function(response){
+                            ctrl.list.push(response.data);
+                            ctrl.item = '';
+                            ctrl.calculate();
+                        },
+                        function(err){
+                            console.log('error occured while adding todoitem')
+                        }
+                    );
 
                 };
                 this.calculate = function(){
@@ -36,9 +55,10 @@
                     ctrl.remaining = remaining;
                     ctrl.total = total;
                 };
+                this.getTodo();
                
             },
             controllerAs :'ctrl'
         };
     })
-})()
+})();
