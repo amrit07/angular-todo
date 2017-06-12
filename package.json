@@ -19,9 +19,11 @@
   "homepage": "https://github.com/amrit07/angular-todo#readme",
   "dependencies": {
     "angular": "^1.6.4",
+    "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
     "express": "^4.15.3",
-    "mongoose": "^4.10.5"
+    "mongoose": "^4.10.5",
+    "morgan": "^1.8.2"
   },
   "devDependencies": {
     "progress-bar-webpack-plugin": "^1.9.3",
