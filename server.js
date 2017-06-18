@@ -7,8 +7,6 @@ var mongoose = require('mongoose');
 
 var TODO = require(path.resolve(__dirname,'server/models/TODO'));
 
-
-
 app.use('/dist',express.static(path.resolve(__dirname,'app/dist')));
 app.use('/css',express.static(path.resolve(__dirname,'app/css')));
 app.use('/app',express.static(path.resolve(__dirname,'app')));
@@ -43,8 +41,7 @@ db.once('open', function() {
     });
 
     /**
-     * creates a todoItem and updates in db
-     */
+     * creates a todoItem and updates in db */
     app.post('/api/v1/todos',function (req, res) {
         TODO.create({
             title:req.body.title,

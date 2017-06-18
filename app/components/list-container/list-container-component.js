@@ -32,7 +32,6 @@
                         function(response){
                             ctrl.list.push(response.data);
                             ctrl.item = '';
-                            ctrl.txt = 'You are done with this item';
                             ctrl.calculate();
                             ctrl.removeItemNew();
                         },
@@ -42,12 +41,6 @@
                     );
 
                 };
-                
-                this.removeItemNew = function(){
-                   var oldList = this.addTodo;
-                   console.log(oldList);
-                };
-
                 this.calculate = function(){
                     var complete = 0;
                     var remaining = 0;
@@ -64,7 +57,6 @@
                     ctrl.completed = complete;
                     ctrl.remaining = remaining;
                     ctrl.total = total;
-
                 };
                 this.getTodo();
                
