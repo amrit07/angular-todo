@@ -22,22 +22,23 @@
         <li class="collection-header"><h4 class="teal-text">List of your items</h4></li>
         <li ng-repeat="item in ctrl.list" class="collection-item" ng-class="{completed:item.isCompleted}">
             <list-item item-obj="item" on-update="ctrl.calculate()"></list-item>
+
         </li>
     </ul>
  </div>
 
 
 <div class="row">
-    <div class="col s4">
+    <div class="col m4 s6">
         <input id="text1" type="checkbox" />
         <label for="text1">Select All</label>
     </div>
-    <div class="col s4">
+    <div class="col m4 s6">
         <input id="text2" type="checkbox" />
         <label for="text2">Deselect All</label>
     </div>
-    <div class="col s4">
-        <button class="waves-effect waves-light btn pull-right red darken-1">Delete All</button>
+    <div class="col m4 s9 pull-s1">
+        <button ng-click="ctrl.removeItemNew()" class="waves-effect waves-light btn pull-right red darken-1">Delete</button>
     </div>
 </div>
 
@@ -55,5 +56,4 @@
             <div><span class="new badge">{{ctrl.total}}</span> Total numbers of items:</div>
         </li>
     </ul>
-    000 000 00 00 {{ctrl.txt}}
 </div>
