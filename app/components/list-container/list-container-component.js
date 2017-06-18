@@ -25,14 +25,15 @@
                     }
                     var itemObj = {};
                     itemObj.title = ctrl.item;
+                    itemObj.txt = '';
                     itemObj.isCompleted = false;
 
                     $http.post('/api/v1/todos',itemObj).then(
                         function(response){
                             ctrl.list.push(response.data);
                             ctrl.item = '';
-                            //ctrl.txt = 'You are done with this item';
                             ctrl.calculate();
+                            ctrl.removeItemNew();
                         },
                         function(err){
                             console.log('error occured while adding todoitem');
@@ -40,7 +41,6 @@
                     );
 
                 };
-                
                 this.calculate = function(){
                     var complete = 0;
                     var remaining = 0;
@@ -53,10 +53,10 @@
                             }
                     });
                     var total = complete+remaining;
+                    var txt = "data";
                     ctrl.completed = complete;
                     ctrl.remaining = remaining;
                     ctrl.total = total;
-                    ctrl.txt = 'You are done with this item';
                 };
                 this.getTodo();
                
