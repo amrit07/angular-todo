@@ -1,14 +1,68 @@
 <html>
-    <head>
-        <title>My app</title>
-        <script src="dist/bundle/vendor.min.js"></script>
-        <script src="dist/bundle/app.min.js"></script>
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-    </head>
-    <body ng-app="myApp">
+
+<head>
+    <title>My app</title>
+    <script src="dist/bundle/vendor.min.js"></script>
+    <script src="dist/bundle/app.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+</head>
+
+<body ng-app="myApp">
+
+    <header>
+        <nav>
+            <div class="container">
+                <div class="row">
+                    <div class="nav-wrapper">
+                        <span class="brand-logo">ToDo List</span>
+                        <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li><a href="">AngularJs</a></li>
+                            <li><a href="">Express</a></li>
+                            <li><a href="">Mongo</a></li>
+                            <li><a href="">Webpack</a></li>
+                            <li><a href="">Materialize</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <list-container></list-container>
+    </div>
+
+
+    <footer class="page-footer">
         <div class="container">
-            <div class="alert alert-warning">Hello World</div>
-            <list-container></list-container>
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">AngularJs Developers</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Amrit - Lecturer/Developer</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Ram - Developer</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Rahul - Developer</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Santosh -Developer</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </body>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2017 Copyright Text
+            </div>
+        </div>
+    </footer>
+
+</body>
+
 </html>

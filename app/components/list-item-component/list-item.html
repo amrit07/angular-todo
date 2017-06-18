@@ -1,7 +1,10 @@
-<div class="checkbox">
-    <label>
-    <input type="checkbox" ng-model="ctrl.itemObj.isCompleted" ng-class="{completed:ctrl.itemObj.isCompleted}" 
-    ng-click="ctrl.onUpdate()"/>
-    <span>{{ctrl.itemObj.title}}</span>
+<div>
+    <input type="checkbox" class="filled-in" id="{{ctrl.itemObj.title}}"
+        ng-model="ctrl.itemObj.isCompleted" 
+        ng-class="{completed:ctrl.itemObj.isCompleted}" 
+        ng-click="ctrl.onUpdate()" />
+    <label for="{{ctrl.itemObj.title}}">
+        <span>{{ctrl.itemObj.title}}</span>
     </label>
+    <div class="pull-right">{{ctrl.itemObj.txt}}</div>
 </div>
