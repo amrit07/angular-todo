@@ -1,10 +1,7 @@
 <div>
-    <input type="checkbox" class="filled-in" id="{{ctrl.itemObj.title}}"
-        ng-model="ctrl.itemObj.isCompleted" 
-        ng-class="{completed:ctrl.itemObj.isCompleted}" 
-        ng-click="ctrl.onUpdate()" />
+    <input type="checkbox" class="filled-in" id="{{ctrl.itemObj.title}}" ng-model="ctrl.itemObj.isCompleted" ng-class="{completed:ctrl.itemObj.isCompleted}" ng-click="ctrl.onUpdate()" />
     <label for="{{ctrl.itemObj.title}}">
         <span>{{ctrl.itemObj.title}}</span>
     </label>
-    <div class="right">This is your item: {{ctrl.itemObj.title}}</div>
+    <div class="right">This is your item: {{ctrl.itemObj.title}} <a href="javascript:void(0)">(X)</a></div>
 </div>
