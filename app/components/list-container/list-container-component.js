@@ -19,6 +19,23 @@
                             }
                         )
                     };
+
+                    this.deleteTodo = function () {
+                        $http.delete('/api/v1/todos').then(
+                            ctrl.list = '';
+                            function (response) {
+                                console.log('response is', response.data);
+                                ctrl.list = '';
+
+                            },
+                            function (err) {
+                                console.log('error occured while fetching the items')
+                            }
+                        )
+
+                    };
+
+
                     this.addTodo = function () {
                         if (!ctrl.item) {
                             return false;
@@ -42,13 +59,7 @@
 
                     };
 
-                    this.delete = function () {
 
-                        alert('Hi');
-                        //var olditemObj = this.addTodo;
-                        //this.addTodo = [];
-
-                    };
 
                     this.calculate = function () {
                         var complete = 0;
